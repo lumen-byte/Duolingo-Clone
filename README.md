@@ -8,7 +8,7 @@ Built exactly to the assignment's technical stack: **Next.js (TypeScript)** fron
 
 ## Live demo & repository
 
-* **Live app**: duolingo-clone-lumenbyte1.vercel.app
+* **Live app**: [duolingo-clone-lumenbyte1.vercel.app](https://duolingo-clone-lumenbyte1.vercel.app/)
 * **Repo**: https://github.com/lumen-byte/Duolingo-Clone
 
 ---
