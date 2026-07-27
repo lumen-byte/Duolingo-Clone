@@ -13,7 +13,7 @@ A full-stack Duolingo clone built on the required stack — **Next.js (TypeScrip
 
 Main learning dashboard with lesson progression.
 
-![Learning Path Light]([assets/screenshots/01-learning-path-light.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.26%E2%80%AFPM.png)
+![Learning Path Light]([assets/screenshots/01-learning-path-light.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.26%E2%80%AFPM.png))
 
 ---
 
