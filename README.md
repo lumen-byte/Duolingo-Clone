@@ -8,8 +8,8 @@ Built exactly to the assignment's technical stack: **Next.js (TypeScript)** fron
 
 ## Live demo & repository
 
-* **Live app**: your deployed URL (Vercel + Render/Railway)
-* **Repo**: public GitHub repo containing `frontend/` (Next.js) and `backend/` (FastAPI) directories.
+* **Live app**: duolingo-clone-lumenbyte1.vercel.app
+* **Repo**: https://github.com/lumen-byte/Duolingo-Clone
 
 ---
 
@@ -285,3 +285,5 @@ Update `next.config.js` `rewrites()` destination to point to the deployed FastAP
 ---
 
 Built for the Scaler SDE Fullstack assignment. 🦉
+Name - Abhimanyu Pratap Singh
+
