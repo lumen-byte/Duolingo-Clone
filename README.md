@@ -7,6 +7,73 @@ A full-stack Duolingo clone built on the required stack — **Next.js (TypeScrip
 
 ---
 
+## Screenshots
+
+### Learning Path (Light Mode)
+
+Main learning dashboard with lesson progression.
+
+![Learning Path Light](assets/screenshots/01-learning-path-light.png)
+
+---
+
+### Learning Path (Dark Mode)
+
+Dark mode version of the learning dashboard.
+
+![Learning Path Dark](assets/screenshots/02-learning-path-dark.png)
+
+---
+
+### Interactive Lesson
+
+Interactive lesson with hints and answer validation.
+
+![Interactive Lesson](assets/screenshots/03-interactive-lesson.png)
+
+---
+
+### Error Feedback
+
+Detailed feedback for incorrect answers.
+
+![Error Feedback](assets/screenshots/04-error-feedback.png)
+
+---
+
+### Lesson Completion
+
+Lesson summary with XP and achievements.
+
+![Lesson Complete](assets/screenshots/05-lesson-complete.png)
+
+---
+
+### Duo Max AI
+
+AI tutor for Spanish learning assistance.
+
+![Duo Max AI](assets/screenshots/06-duo-max-ai.png)
+
+---
+
+### Leaderboard
+
+XP rankings and league standings.
+
+![Leaderboard](assets/screenshots/07-leaderboard.png)
+
+---
+
+### Learner Profile
+
+User profile with progress and achievements.
+
+![Learner Profile](assets/screenshots/08-profile.png)
+```
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
