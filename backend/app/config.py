@@ -5,7 +5,7 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str = 'sqlite+aiosqlite:////app/backend/duolingo.db'
     GROQ_API_KEY: str = ''
-    AI_MODEL: str = 'llama3-8b-8192'
+    AI_MODEL: str = 'llama-3.1-8b-instant'
     AI_PROVIDER: str = 'groq'
     CORS_ORIGINS: str = '*'
 
