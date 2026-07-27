@@ -70,7 +70,7 @@ XP rankings and league standings.
 User profile with progress and achievements.
 
 ![Learner Profile](assets/screenshots/08-profile.png)
-```
+
 
 ---
 
