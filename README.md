@@ -70,6 +70,9 @@ XP rankings and league standings.
 User profile with progress and achievements.
 
 ![Learner Profile](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.03%E2%80%AFPM.png?raw=true)
+
+--- 
+
 ## Tech Stack
 
 | Layer | Technology |
