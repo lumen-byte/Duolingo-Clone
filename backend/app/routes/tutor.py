@@ -1,9 +1,9 @@
-"""Duo Max AI Tutor — Gemini via emergentintegrations. Two endpoints:
+"""Duo Max AI Tutor — Groq integration. Two endpoints:
    POST /api/tutor/explain — explain why an answer was wrong
    POST /api/tutor/chat    — free-form conversational tutor (session-persistent)
 """
 from fastapi import APIRouter, HTTPException
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+from groq import Groq
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import Depends
@@ -24,15 +24,10 @@ TUTOR_SYSTEM = (
     "Never use markdown headers. Use plain sentences with occasional emojis (🦉, ✨)."
 )
 
-
-def make_chat(session_id: str) -> LlmChat:
-    if not settings.EMERGENT_LLM_KEY:
-        raise HTTPException(status_code=503, detail='LLM key not configured')
-    chat = (
-        LlmChat(api_key=settings.EMERGENT_LLM_KEY, session_id=session_id, system_message=TUTOR_SYSTEM)
-        .with_model(settings.AI_PROVIDER, settings.AI_MODEL)
-    )
-    return chat
+def get_groq_client():
+    if not settings.GROQ_API_KEY:
+        raise HTTPException(status_code=503, detail='Groq API key not configured')
+    return Groq(api_key=settings.GROQ_API_KEY)
 
 
 @router.post('/explain')
@@ -47,11 +42,20 @@ async def explain(body: ExplainRequest, session: AsyncSession = Depends(get_sess
         f"Be encouraging. No headers."
     )
     try:
-        chat = make_chat(body.sessionId)
-        reply = await chat.send_message(UserMessage(text=prompt))
+        client = get_groq_client()
+        messages = [
+            {"role": "system", "content": TUTOR_SYSTEM},
+            {"role": "user", "content": prompt}
+        ]
+        completion = client.chat.completions.create(
+            model=settings.AI_MODEL,
+            messages=messages,
+            temperature=0.7,
+        )
+        text = completion.choices[0].message.content
     except Exception as e:
         raise HTTPException(status_code=502, detail=f'LLM error: {e}')
-    text = getattr(reply, 'content', None) or str(reply)
+        
     session.add(TutorMessage(session_id=body.sessionId, role='user', content=prompt))
     session.add(TutorMessage(session_id=body.sessionId, role='assistant', content=text))
     await session.commit()
@@ -61,11 +65,26 @@ async def explain(body: ExplainRequest, session: AsyncSession = Depends(get_sess
 @router.post('/chat')
 async def chat(body: TutorChatRequest, session: AsyncSession = Depends(get_session)):
     try:
-        c = make_chat(body.sessionId)
-        reply = await c.send_message(UserMessage(text=body.message))
+        # Load history
+        rows = (await session.execute(
+            select(TutorMessage).where(TutorMessage.session_id == body.sessionId).order_by(TutorMessage.created_at)
+        )).scalars().all()
+        
+        messages = [{"role": "system", "content": TUTOR_SYSTEM}]
+        for r in rows:
+            messages.append({"role": r.role, "content": r.content})
+        messages.append({"role": "user", "content": body.message})
+        
+        client = get_groq_client()
+        completion = client.chat.completions.create(
+            model=settings.AI_MODEL,
+            messages=messages,
+            temperature=0.7,
+        )
+        text = completion.choices[0].message.content
     except Exception as e:
         raise HTTPException(status_code=502, detail=f'LLM error: {e}')
-    text = getattr(reply, 'content', None) or str(reply)
+        
     session.add(TutorMessage(session_id=body.sessionId, role='user', content=body.message))
     session.add(TutorMessage(session_id=body.sessionId, role='assistant', content=text))
     await session.commit()

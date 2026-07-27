@@ -4,9 +4,9 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='/app/backend/.env', extra='ignore')
 
     DATABASE_URL: str = 'sqlite+aiosqlite:////app/backend/duolingo.db'
-    EMERGENT_LLM_KEY: str = ''
-    AI_MODEL: str = 'gemini-2.0-flash'
-    AI_PROVIDER: str = 'gemini'
+    GROQ_API_KEY: str = ''
+    AI_MODEL: str = 'llama3-8b-8192'
+    AI_PROVIDER: str = 'groq'
     CORS_ORIGINS: str = '*'
 
 settings = Settings()

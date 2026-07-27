@@ -10,9 +10,9 @@ services:
       - backend_data:/app/data
     environment:
       - DATABASE_URL=sqlite+aiosqlite:////app/data/duolingo.db
-      - EMERGENT_LLM_KEY=${EMERGENT_LLM_KEY}
-      - AI_MODEL=gemini-2.5-flash
-      - AI_PROVIDER=gemini
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - AI_MODEL=llama3-8b-8192
+      - AI_PROVIDER=groq
       - CORS_ORIGINS=*
     restart: unless-stopped
 

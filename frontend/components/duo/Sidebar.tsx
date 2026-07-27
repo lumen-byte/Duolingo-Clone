@@ -1,5 +1,6 @@
 'use client'
 import { cn } from '@/lib/utils'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { Home, Trophy, User, ShoppingBag, MoreHorizontal, Moon, Sun, Sparkles } from 'lucide-react'
 
@@ -15,6 +16,8 @@ const NAV: { id: View; label: string; icon: any; color: string; bg: string; bord
 
 export default function Sidebar({ view, setView, onOpenTutor }: { view: View; setView: (v: View) => void; onOpenTutor: () => void }) {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
   return (
     <aside className="hidden md:flex fixed left-0 top-0 h-screen w-[260px] border-r-2 border-outline surface flex-col p-4 z-40">
       <div className="flex items-center gap-2 px-3 py-4 mb-4">
@@ -48,8 +51,8 @@ export default function Sidebar({ view, setView, onOpenTutor }: { view: View; se
       <div className="mt-auto flex flex-col gap-2 px-3 py-4 border-t-2 border-outline">
         <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           className="flex items-center gap-2 text-sm font-bold ink-3 hover:ink transition">
-          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          {mounted ? (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />) : <div className="w-5 h-5" />}
+          {mounted ? (theme === 'dark' ? 'Light mode' : 'Dark mode') : 'Theme'}
         </button>
         <div className="text-xs ink-3">Duolingo Clone • Scaler assignment</div>
       </div>

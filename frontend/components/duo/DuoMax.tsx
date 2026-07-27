@@ -100,7 +100,7 @@ export default function DuoMax({ open, onClose, sessionId, onSend }: {
                   onKeyDown={(e) => { if (e.key === 'Enter') send() }}
                   placeholder="Ask Duo Max anything about Spanish…" disabled={busy}
                   className="flex-1 border-2 border-outline surface ink rounded-2xl px-4 py-3 font-bold focus:outline-none focus:border-duo-purple" />
-                <button onClick={send} disabled={busy || !input.trim()}
+                <button onClick={() => send()} disabled={busy || !input.trim()}
                   className="duo-btn duo-btn-purple px-5"><Send className="w-5 h-5" /></button>
               </div>
             </div>
