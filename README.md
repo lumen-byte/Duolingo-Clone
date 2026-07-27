@@ -29,7 +29,7 @@ Dark mode version of the learning dashboard.
 
 Interactive lesson with answer validation.
 
-![Interactive Lesson]([assets/screenshots/03-interactive-lesson.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.38.10%E2%80%AFPM.png)
+![Interactive Lesson]([assets/screenshots/03-interactive-lesson.png]([https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.38.10%E2%80%AFPM.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.38.10%E2%80%AFPM.png))
 
 ---
 
