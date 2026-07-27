@@ -1,0 +1,33 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: duolingo_backend
+    ports:
+      - "8001:8001"
+    volumes:
+      - backend_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:////app/data/duolingo.db
+      - EMERGENT_LLM_KEY=${EMERGENT_LLM_KEY}
+      - AI_MODEL=gemini-2.5-flash
+      - AI_PROVIDER=gemini
+      - CORS_ORIGINS=*
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: duolingo_frontend
+    ports:
+      - "80:3000"
+    environment:
+      - BACKEND_API_URL=http://backend:8001
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-http://localhost:3000}
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_data:

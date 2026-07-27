@@ -6,10 +6,10 @@ const nextConfig = {
       { protocol: 'https', hostname: 'avatars.githubusercontent.com', pathname: '/**' },
     ],
   },
-  // Proxy all /api/* requests to the FastAPI backend on port 8001
+  // Proxy all /api/* requests to the FastAPI backend
   async rewrites() {
     return [
-      { source: '/api/:path*', destination: 'http://localhost:8001/api/:path*' },
+      { source: '/api/:path*', destination: `${process.env.BACKEND_API_URL || 'http://localhost:8001'}/api/:path*` },
     ];
   },
   webpack(config, { dev }) {
