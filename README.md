@@ -13,7 +13,7 @@ A full-stack Duolingo clone built on the required stack — **Next.js (TypeScrip
 
 Main learning dashboard with lesson progression.
 
-![Learning Path Light]([assets/screenshots/01-learning-path-light.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.26%E2%80%AFPM.png))
+![Learning Path Light](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.26%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -21,7 +21,7 @@ Main learning dashboard with lesson progression.
 
 Dark mode version of the learning dashboard.
 
-![Learning Path Dark]([assets/screenshots/02-learning-path-dark.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.38%E2%80%AFPM.png)
+![Learning Path Dark](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.38%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -29,15 +29,15 @@ Dark mode version of the learning dashboard.
 
 Interactive lesson with answer validation.
 
-![Interactive Lesson](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.38.10%E2%80%AFPM.png)
+![Interactive Lesson](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.38.10%E2%80%AFPM.png?raw=true)
 
 ---
 
 ### Error Feedback
 
-Ai assistant feedback for incorrect answers.
+AI-powered feedback for incorrect answers.
 
-![Error Feedback]([assets/screenshots/04-error-feedback.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.02%E2%80%AFPM.png)
+![Error Feedback](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.02%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -45,7 +45,7 @@ Ai assistant feedback for incorrect answers.
 
 Lesson summary with XP and achievements.
 
-![Lesson Complete]([assets/screenshots/05-lesson-complete.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.44.06%E2%80%AFPM.png)
+![Lesson Complete](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.44.06%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -53,7 +53,7 @@ Lesson summary with XP and achievements.
 
 AI tutor for Spanish learning assistance.
 
-![Duo Max AI]([assets/screenshots/06-duo-max-ai.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.20%E2%80%AFPM.png)
+![Duo Max AI](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.20%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -61,7 +61,7 @@ AI tutor for Spanish learning assistance.
 
 XP rankings and league standings.
 
-![Leaderboard]([assets/screenshots/07-leaderboard.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.43%E2%80%AFPM.png)
+![Leaderboard](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.39.43%E2%80%AFPM.png?raw=true)
 
 ---
 
@@ -69,11 +69,7 @@ XP rankings and league standings.
 
 User profile with progress and achievements.
 
-![Learner Profile]([assets/screenshots/08-profile.png](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.03%E2%80%AFPM.png)
-
-
----
-
+![Learner Profile](https://github.com/lumen-byte/Duolingo-Clone/blob/main/ScreenShot/Screenshot%202026-07-27%20at%205.40.03%E2%80%AFPM.png?raw=true)
 ## Tech Stack
 
 | Layer | Technology |
