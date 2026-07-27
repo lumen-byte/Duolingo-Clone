@@ -1,0 +1,25 @@
+# Node
+node_modules/
+.next/
+frontend/.next/
+frontend/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/**/__pycache__/
+
+# Env
+frontend/.env
+frontend/.env.local
+backend/.env
+backend/.env.local
+
+# SQLite
+backend/duolingo.db
+backend/*.db
+
+# OS
+.DS_Store
+Thumbs.db

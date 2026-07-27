@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 23%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 23%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 23%;
+    --primary: 88 96% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 23%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 23%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 88 96% 40%;
+    --radius: 1rem;
+    --font-nunito: 'Nunito', sans-serif;
+
+    /* Duo semantic surfaces (light) */
+    --surface: #ffffff;
+    --surface-2: #f7f7f7;
+    --surface-3: #ffffff;
+    --ink: #3c3c3c;
+    --ink-2: #4b4b4b;
+    --ink-3: #777777;
+    --outline: #e5e5e5;
+    --outline-2: #afafaf;
+    --shadow-outline: #e5e5e5;
+  }
+
+  .dark {
+    /* OLED-black inspired dark mode (matches real Duolingo dark theme) */
+    --background: 197 41% 11%;
+    --foreground: 0 0% 97%;
+    --card: 197 24% 17%;
+    --card-foreground: 0 0% 97%;
+    --popover: 197 24% 17%;
+    --popover-foreground: 0 0% 97%;
+    --primary: 88 96% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 197 24% 17%;
+    --secondary-foreground: 0 0% 97%;
+    --muted: 197 24% 17%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 197 24% 17%;
+    --accent-foreground: 0 0% 97%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 14% 26%;
+    --input: 200 14% 26%;
+    --ring: 88 96% 45%;
+
+    --surface: #131f24;
+    --surface-2: #202f36;
+    --surface-3: #202f36;
+    --ink: #f7f7f7;
+    --ink-2: #e5e5e5;
+    --ink-3: #93a1a8;
+    --outline: #37464f;
+    --outline-2: #37464f;
+    --shadow-outline: #37464f;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body { font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { background: var(--surface); color: var(--ink); font-weight: 700; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--outline); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--outline-2); }
+
+/* Duo button (3D press effect) */
+.duo-btn {
+  @apply relative inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-2xl transition-all select-none;
+  transform: translateY(0);
+  transition: transform 0.06s ease, box-shadow 0.06s ease, filter 0.15s;
+}
+.duo-btn:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 0 0 0 transparent !important; }
+.duo-btn:disabled { @apply opacity-60 cursor-not-allowed; box-shadow: 0 4px 0 0 var(--outline-2) !important; }
+
+.duo-btn-green { @apply bg-duo-green text-white; box-shadow: 0 4px 0 0 #58a700, inset 0 -2px 0 0 rgba(0,0,0,0.05); }
+.duo-btn-green:hover:not(:disabled) { @apply bg-duo-green-hover; }
+
+.duo-btn-blue { @apply bg-duo-blue text-white; box-shadow: 0 4px 0 0 #1899d6; }
+.duo-btn-red { @apply bg-duo-red text-white; box-shadow: 0 4px 0 0 #c53030; }
+.duo-btn-yellow { @apply bg-duo-yellow text-white; box-shadow: 0 4px 0 0 #e6b400; }
+.duo-btn-purple { @apply bg-duo-purple text-white; box-shadow: 0 4px 0 0 #a560e8; }
+.duo-btn-white { background: var(--surface); color: var(--ink-2); border: 2px solid var(--outline); box-shadow: 0 4px 0 0 var(--shadow-outline); }
+.duo-btn-white:hover:not(:disabled) { background: var(--surface-2); }
+
+.duo-btn-outline {
+  background: var(--surface); color: var(--ink-2); border: 2px solid var(--outline);
+  @apply rounded-2xl font-bold uppercase tracking-wider transition-all;
+  box-shadow: 0 2px 0 0 var(--shadow-outline);
+}
+.duo-btn-outline:hover { background: var(--surface-2); }
+
+.skill-node {
+  @apply relative rounded-full flex items-center justify-center transition-all cursor-pointer select-none;
+  transform: translateY(0);
+  transition: transform 0.08s ease, filter 0.15s;
+}
+.skill-node:active:not(.locked) { transform: translateY(6px); box-shadow: 0 0 0 0 transparent !important; }
+.skill-node.locked { @apply cursor-not-allowed; filter: grayscale(1) brightness(0.9); }
+
+.option-card {
+  position: relative; background: var(--surface); color: var(--ink);
+  border: 2px solid var(--outline);
+  @apply rounded-2xl px-4 py-3 cursor-pointer transition-all select-none font-bold;
+  box-shadow: 0 3px 0 0 var(--shadow-outline);
+}
+.option-card:hover:not(.disabled) { background: var(--surface-2); }
+.option-card.selected { border-color: #1cb0f6; background: rgba(28,176,246,0.12); color: #1cb0f6; box-shadow: 0 3px 0 0 #84d8ff; }
+.dark .option-card.selected { color: #84d8ff; }
+.option-card.correct { border-color: #58cc02; background: rgba(88,204,2,0.15); color: #58a700; box-shadow: 0 3px 0 0 #89e219; }
+.dark .option-card.correct { color: #a6ff5a; }
+.option-card.wrong { border-color: #ff4b4b; background: rgba(255,75,75,0.15); color: #e63f3f; box-shadow: 0 3px 0 0 #ffb3b3; }
+.dark .option-card.wrong { color: #ffb3b3; }
+.option-card.disabled { @apply opacity-70 cursor-not-allowed; }
+
+.word-chip {
+  @apply inline-flex items-center rounded-xl px-3 py-2 font-bold cursor-pointer transition-all select-none;
+  background: var(--surface); color: var(--ink); border: 2px solid var(--outline);
+  box-shadow: 0 2px 0 0 var(--shadow-outline);
+}
+.word-chip:hover:not(.used) { background: var(--surface-2); }
+.word-chip.used { @apply opacity-30 cursor-not-allowed; border-color: transparent; box-shadow: none; }
+
+.hidden-scroll::-webkit-scrollbar { display: none; }
+
+.confetti-dot { position: absolute; width: 10px; height: 10px; border-radius: 2px; pointer-events: none; animation: confetti 1.6s ease-out forwards; }
+
+@keyframes float-up { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-40px); opacity: 0; } }
+.xp-float { animation: float-up 1.2s ease-out forwards; }
+
+@keyframes duo-blink { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+.duo-eye-blink { animation: duo-blink 4s infinite; transform-origin: center; }
+
+/* Duo dark-mode background for main app */
+.dark body { background: #131f24; }
+
+/* Card / surface utility classes for consistent theming */
+.surface { background: var(--surface); }
+.surface-2 { background: var(--surface-2); }
+.ink { color: var(--ink); }
+.ink-2 { color: var(--ink-2); }
+.ink-3 { color: var(--ink-3); }
+.border-outline { border-color: var(--outline); }
+.bg-outline { background: var(--outline); }
+.bg-surface { background: var(--surface); }
+.bg-surface-2 { background: var(--surface-2); }
+.hover\:surface-2:hover { background: var(--surface-2); }
