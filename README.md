@@ -59,7 +59,7 @@ users ──1:n── user_skill_progress    → skills
 ## Core Features
 
 - **Skill tree** — 3 units, 7 skills, seeded lessons across all exercise types. Lock → active → completed states, crown progress rings, animated "Start" prompt.
-- **Lesson player** — 5 exercise types, signature correct/incorrect feedback bar, hearts deduction on wrong answers, out-of-hearts modal, an animated Duo Owl mascot that reacts to performance, and text-to-speech on every prompt.
+- **Lesson player** — 5 exercise types (MCQ, word bank, match pairs, fill-blank, type-answer), signature correct/incorrect feedback bar, hearts deduction on wrong answers, out-of-hearts modal, an animated Duo Owl mascot that reacts to performance, and text-to-speech narration on prompts and options.
 - **Gamification** — streak tracking, daily XP goal, hearts that regenerate over time or refill via gems/practice, a Bronze league leaderboard against seeded competitors, and a 7-badge achievement engine driven by backend rules.
 - **Practice mode** — replay a completed skill to earn XP and recover a heart, mirroring Duolingo's real refill mechanic rather than just gating progress.
 - **Legendary mode** — a timed, shuffled challenge run (60s per exercise) for a large XP payout.
