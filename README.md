@@ -284,6 +284,10 @@ Update `next.config.js` `rewrites()` destination to point to the deployed FastAP
 
 ---
 
-Built for the Scaler SDE Fullstack assignment. 🦉
-Name - Abhimanyu Pratap Singh
+Built for the Scaler SDE Fullstack assignment. 🦉 |
+## Author
+
+**Abhimanyu Pratap Singh**  
+Roll No: E23CSEU0193  
+Bennett University
 
